@@ -22,7 +22,7 @@ npm run build
 
 ## package.json 说明
 
-```json
+```javascript
 {
   "name": "base",
   "description": "base",
@@ -30,11 +30,14 @@ npm run build
   "author": "Haovei <haovei@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "node ../../build/base/dev-server.js",   //开发模式，现有两种模式 base、vue，普通模式用 base，vue 项目用 vue
-    "build": "node ../../build/base/build.js"       //打包生产环境
+    //开发模式，现有两种模式 base、vue，普通模式用 base，vue 项目用 vue
+    "dev": "node ../../build/base/dev-server.js",
+    //打包生产环境Ï
+    "build": "node ../../build/base/build.js"
   },
+  //webpack 全局变量
   "webpackDefine": {
-    "VERSION": "'v1.0.0'"   //webpack 全局变量
+    "VERSION": "'v1.0.0'"
   }
 }
 ```
