@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node ../../build/base/dev-server.js",
-    "build": "node ../../build/base/build.js",
-    "lint": "eslint --ext .js src"
+    "build": "node ../../build/base/build.js"
   },
   "webpackDefine": {
     "VERSION": "'v1.0.0'"
