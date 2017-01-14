@@ -1,10 +1,12 @@
 var path = require('path')
+var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 var postcssImport = require('postcss-import')
 var config = require('./config')
 var utils = require('./utils')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var projectRoot = path.resolve(process.cwd(), './')
+var projectPackage = require(process.cwd() + '/package.json');
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
@@ -100,5 +102,8 @@ module.exports = {
 				browsers: AUTOPREFIXER_BROWSERS
 			})
 		]
-	}
+	},
+	plugins: [
+		new webpack.DefinePlugin(projectPackage.webpackDefine)
+	]
 }

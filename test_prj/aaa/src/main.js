@@ -1,3 +1,2 @@
 import s from './style.css';
-console.log(s);
-
+console.log(VERSION);
