@@ -69,12 +69,6 @@ module.exports = {
 			include: projectRoot,
 			exclude: /node_modules/
 		}, {
-			test: /\.css$/,
-			loader: ExtractTextPlugin.extract('style', 'css!postcss')
-		}, {
-			test: /\.less$/,
-			loader: ExtractTextPlugin.extract('style', 'css!postcss!less')
-		}, {
 			test: /\.json$/,
 			loader: 'json'
 		}, {
@@ -113,5 +107,8 @@ module.exports = {
 		postcss: [autoprefixer({
 			browsers: AUTOPREFIXER_BROWSERS
 		})]
-	}
+	},
+	plugins: [
+		new webpack.DefinePlugin(projectPackage.webpackDefine || {})
+	]
 }

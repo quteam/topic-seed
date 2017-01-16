@@ -104,6 +104,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.DefinePlugin(projectPackage.webpackDefine)
+		new webpack.DefinePlugin(projectPackage.webpackDefine || {})
 	]
 }
