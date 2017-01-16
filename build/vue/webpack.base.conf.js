@@ -42,7 +42,7 @@ module.exports = {
 			'src': path.resolve(process.cwd(), './src'),
 			'public': path.resolve(process.cwd(), './public'),
 			'fetch': 'whatwg-fetch',
-			// 'components': path.resolve(process.cwd(), './src/components')
+			'components': path.resolve(process.cwd(), config.rootDir + './components')
 		}
 	},
 	resolveLoader: {

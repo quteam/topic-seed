@@ -1,6 +1,7 @@
 let path = require('path')
 
-let projectDir = process.cwd().replace(__dirname.replace(/(.*)build\/base\/config$/, '$1'), '');
+let rootDir = __dirname.replace(/(.*)build\/base\/config$/, '$1');
+let projectDir = process.cwd().replace(rootDir, '');
 let projectPackage = require(process.cwd() + '/package.json');
 let layerArr = [];
 layerArr.length = projectDir.split('/').length + 1;
