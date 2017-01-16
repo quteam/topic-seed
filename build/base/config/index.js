@@ -1,7 +1,7 @@
-var path = require('path')
+let path = require('path')
 
 let projectDir = process.cwd().replace(__dirname.replace(/(.*)build\/base\/config$/, '$1'), '');
-
+let projectPackage = require(process.cwd() + '/package.json');
 let layerArr = [];
 layerArr.length = projectDir.split('/').length + 1;
 
@@ -22,7 +22,7 @@ module.exports = {
 	},
 	dev: {
 		env: require('./dev.env'),
-		port: 8080,
+		port: projectPackage.devPort || 8080,
 		assetsSubDirectory: './',
 		assetsPublicPath: '',
 		proxyTable: {},
