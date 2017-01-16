@@ -11,5 +11,5 @@
   "webpackDefine": {
     "VERSION": "'v1.0.0'"
   },
-  "devPort": 80
+  "devPort": 8080
 }

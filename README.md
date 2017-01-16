@@ -38,6 +38,8 @@ npm run build
   //webpack 全局变量
   "webpackDefine": {
     "VERSION": "'v1.0.0'"
-  }
+  },
+  //开发端口
+  "devPort": 8080
 }
 ```
