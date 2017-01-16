@@ -88,6 +88,12 @@ module.exports = {
 				limit: 10000,
 				name: utils.assetsPath('fonts/[name].[hash:8].[ext]')
 			}
+		}, {
+			test: /\.html$/,
+			loader: 'html',
+			query: {
+				minimize: true
+			}
 		}]
 	},
 	eslint: {
