@@ -1,8 +1,9 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
-let projectDir = process.cwd().replace(__dirname.replace(/(.*)build\/vue\/config$/, '$1'), '');
-
+let rootDir = __dirname.replace(/(.*)build\/vue\/config$/, '$1');
+let projectDir = process.cwd().replace(rootDir, '');
+let projectPackage = require(process.cwd() + '/package.json');
 let layerArr = [];
 layerArr.length = projectDir.split('/').length + 1;
 
@@ -12,7 +13,7 @@ module.exports = {
 		index: path.resolve(process.cwd(), 'dist/index.html'),
 		assetsRoot: path.resolve(process.cwd(), 'dist'),
 		assetsSubDirectory: './',
-		assetsPublicPath: '',
+		assetsPublicPath: projectPackage.cdnUrl || '',
 		productionSourceMap: false,
 		// Gzip off by default as many popular static hosts such as
 		// Surge or Netlify already gzip all static assets for you.
@@ -23,7 +24,7 @@ module.exports = {
 	},
 	dev: {
 		env: require('./dev.env'),
-		port: 8080,
+		port: projectPackage.devPort || 8080,
 		assetsSubDirectory: './',
 		assetsPublicPath: '',
 		proxyTable: {},
@@ -34,6 +35,7 @@ module.exports = {
 		// just be aware of this issue when enabling this option.
 		cssSourceMap: false
 	},
+	rootDir: rootDir,
 	projectDir: projectDir,
 	projectLayer: layerArr.join('../')
 }

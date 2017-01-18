@@ -7,7 +7,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var projectRoot = path.resolve(process.cwd(), './')
 
 var env = process.env.NODE_ENV
-// check env & config/index.js to decide weither to enable CSS Sourcemaps for the
+// check env & config/main.js to decide weither to enable CSS Sourcemaps for the
 // various preprocessor loaders added to vue-loader at the end of this file
 var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
@@ -42,7 +42,7 @@ module.exports = {
 			'src': path.resolve(process.cwd(), './src'),
 			'public': path.resolve(process.cwd(), './public'),
 			'fetch': 'whatwg-fetch',
-			// 'components': path.resolve(process.cwd(), './src/components')
+			'components': path.resolve(process.cwd(), config.rootDir + './components')
 		}
 	},
 	resolveLoader: {
@@ -107,8 +107,5 @@ module.exports = {
 		postcss: [autoprefixer({
 			browsers: AUTOPREFIXER_BROWSERS
 		})]
-	},
-	plugins: [
-		new webpack.DefinePlugin(projectPackage.webpackDefine || {})
-	]
+	}
 }
