@@ -40,6 +40,7 @@ npm run build
     "VERSION": "'v1.0.0'"
   },
   //开发端口
-  "devPort": 8080
+  "devPort": 8080,
+  "cdnUrl": ""
 }
 ```

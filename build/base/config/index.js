@@ -12,7 +12,7 @@ module.exports = {
 		index: path.resolve(process.cwd(), 'dist/index.html'),
 		assetsRoot: path.resolve(process.cwd(), 'dist'),
 		assetsSubDirectory: './',
-		assetsPublicPath: '',
+		assetsPublicPath: projectPackage.cdnUrl || '',
 		productionSourceMap: false,
 		// Gzip off by default as many popular static hosts such as
 		// Surge or Netlify already gzip all static assets for you.
